@@ -10,11 +10,18 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var diceImageView1: UIImageView!
+    @IBOutlet var diceImageView2: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
     }
 
 
+    @IBAction func rollButtonPressed(_ sender: UIButton) {
+        diceImageView1.image = UIImage(named: "DiceFour")
+    }
 }
 
