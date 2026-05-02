@@ -13,6 +13,11 @@ class ViewController: UIViewController {
     @IBOutlet var diceImageView1: UIImageView!
     @IBOutlet var diceImageView2: UIImageView!
     
+    let diceImages: [UIImage] = [
+        "DiceOne", "DiceTwo", "DiceThree", "DiceFour", "DiceFive", "DiceSix"
+    ].compactMap { UIImage(named: $0) }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -21,7 +26,8 @@ class ViewController: UIViewController {
 
 
     @IBAction func rollButtonPressed(_ sender: UIButton) {
-        diceImageView1.image = UIImage(named: "DiceFour")
+        diceImageView1.image = diceImages[Int.random(in: 0...5)]
+        diceImageView2.image = diceImages[Int.random(in: 0...5)]
     }
 }
 
